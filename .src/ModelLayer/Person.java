@@ -6,6 +6,8 @@ package ModelLayer;
 public abstract class Person {
     private String name, address, email, city, phone;
 
+
+
     public String getAddress() {
         return address;
     }
