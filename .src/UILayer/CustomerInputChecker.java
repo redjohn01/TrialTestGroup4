@@ -2,8 +2,11 @@ package UILayer;
 
 import ControlLayer.CustomerControl;
 import UILayer.Input;
+import UILayer.ErrorCode;
+import UILayer.ErrorWriter;
 
-import static jdk.nashorn.internal.objects.Global.print;
+import java.io.PrintWriter;
+
 
 /**
  * Created by EU on 2016-11-26.
@@ -28,9 +31,9 @@ public abstract class CustomerInputChecker {
         do {
             ok = true;
             cpr = Input.readString();
-            if (cpr.length() != 9) {
+            if (cpr.length() != 10 || (!cpr.matches("[0-9]+"))) {
                 ok = false;
-                print(ErrorCode.WRONG_CPR_INPUT);
+                ErrorWriter.print(ErrorCode.WRONG_CPR_INPUT);
             }
         } while (!ok);
 
@@ -42,9 +45,9 @@ public abstract class CustomerInputChecker {
         do {
             ok = true;
             name = Input.readString();
-            if (name.length() <= 2) {
+            if (name.length() <= 3) {
                 ok = false;
-                print(ErrorCode.WRONG_NAME_INPUT);
+                ErrorWriter.print(ErrorCode.WRONG_NAME_INPUT);
             }
         } while (!ok);
 
@@ -57,10 +60,10 @@ public abstract class CustomerInputChecker {
         do {
             ok = true;
             address = Input.readString();
-            if (address.matches(".*\\d+.*") || address.length() < 2) //checks if there is at least one number in the string
+            if (address.matches(".*\\d+.*") || address.length() < 3) //checks if there is at least one number in the string
             {
                 ok = false;
-                print(ErrorCode.WRONG_ADDRESS_INPUT);
+                ErrorWriter.print(ErrorCode.WRONG_ADDRESS_INPUT);
             }
         } while (!ok);
 
@@ -73,10 +76,10 @@ public abstract class CustomerInputChecker {
         do {
             ok = true;
             email = Input.readString();
-            if (!(email.toLowerCase().contains("@") && email.toLowerCase().contains(".")) || email.length() < 4) // checks if email is at least 5 characters and contains @ and .
+            if (!(email.toLowerCase().contains("@") && email.toLowerCase().contains(".")) || email.length() < 5) // checks if email is at least 5 characters and contains @ and .
             {
                 ok = false;
-                print(ErrorCode.WRONG_EMAIL_INPUT);
+                ErrorWriter.print(ErrorCode.WRONG_EMAIL_INPUT);
             }
         } while (!ok);
 
@@ -92,12 +95,12 @@ public abstract class CustomerInputChecker {
             if (!phone.matches("[0-9]+")) //checks if string is composed only of numbers
             {
                 ok = false;
-                print(ErrorCode.WRONG_PHONE_INPUT);
+                ErrorWriter.print(ErrorCode.WRONG_PHONE_INPUT);
             }
 
-            if (phone.length() < 5 || phone.length() > 15) {
+            if (phone.length() < 6 || phone.length() > 16) {
                 ok = false;
-                print(ErrorCode.WRONG_PHONE_LENGTH_INPUT);
+                ErrorWriter.print(ErrorCode.WRONG_PHONE_LENGTH_INPUT);
             }
         } while (!ok);
 
@@ -110,9 +113,9 @@ public abstract class CustomerInputChecker {
         do {
             ok = true;
             city = Input.readString();
-            if (city.length() < 2) {
+            if (city.length() < 3) {
                 ok = false;
-                print(ErrorCode.WRONG_CITY_INPUT);
+                ErrorWriter.print(ErrorCode.WRONG_CITY_INPUT);
             }
         } while (!ok);
 

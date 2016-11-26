@@ -1,12 +1,13 @@
 package UILayer;
 import java.util.Scanner;
+import UILayer.ErrorCode;
+import UILayer.ErrorWriter;
 
 /**
  * Created by EU on 2016-11-25.
  */
 public abstract class Input {
     private static String inputString;
-    private static int inputInt;
 
     public static String readString() {
         inputString = null; // clearing it before reading from keyboard
@@ -18,11 +19,17 @@ public abstract class Input {
     }
 
     public static int readInt() {
-        inputInt = 0; //clearing it before reading from keyboard
+        inputString = null; // clearing it before reading from keyboard
         Scanner scan = new Scanner(System.in);
 
-        inputInt = scan.nextInt();
+        inputString = scan.nextLine();
 
-        return inputInt;
+        if( !inputString.matches("[0-9]+") )// if whatever is read is not mainly made out of numbers
+        {
+            ErrorWriter.print( ErrorCode.WRONG_INPUT_INTEGER );
+            return 0;
+        }
+
+        return Integer.parseInt( inputString );
     }
 }
