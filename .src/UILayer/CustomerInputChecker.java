@@ -1,4 +1,7 @@
+package UILayer;
+
 import ControlLayer.CustomerControl;
+import UILayer.Input;
 
 import static jdk.nashorn.internal.objects.Global.print;
 

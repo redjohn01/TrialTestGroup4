@@ -1,11 +1,12 @@
+package ModelLayer;
+
 import java.util.ArrayList;
-import ModelLayer.Customer;
 
 /**
  * Created by RaidenRabit on 23-Nov-16.
  */
 public abstract class CustomerContainer {
-    private static ArrayList<Customer> customers;
+    public static ArrayList<Customer> customers;
 
     public static void addCustomer(Customer customer) {
         customers.add(customer);

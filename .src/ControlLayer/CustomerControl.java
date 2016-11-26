@@ -1,3 +1,5 @@
+package ControlLayer;
+
 import ModelLayer.Customer;
 import ModelLayer.CustomerContainer;
 
@@ -13,7 +15,7 @@ public abstract class CustomerControl {
     }
 
     public static String readCustomer(String cpr) { //TODO: return string of all the info that will be printed in MainMenuUI
-
+        return "";
     }
 
     public static int updateCustomer(String cpr) { //asumes there is at least 1 customer in the system
