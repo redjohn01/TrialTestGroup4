@@ -1,5 +1,3 @@
-package ModelLayer;
-
 /**
  * Created by RedJohn on 23-Nov-16.
  */
@@ -7,7 +5,7 @@ public class Contractor extends Person {
     private String CVR;
 
     public Contractor(String CVR, String name, String address, String email, String phone, String city) {
-        super
+        // super
         this.CVR = CVR;
     }
 

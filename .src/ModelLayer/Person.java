@@ -1,11 +1,8 @@
-package ModelLayer;
-
 /**
  * Created by RedJohn on 23-Nov-16.
  */
 public abstract class Person {
     private String name, address, email, city, phone;
-
 
 
     public String getAddress() {

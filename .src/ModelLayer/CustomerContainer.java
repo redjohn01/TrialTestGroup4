@@ -1,13 +1,27 @@
-package ModelLayer;
 import java.util.ArrayList;
-/**
- * Created by RedJohn on 23-Nov-16.
- */
-public class CustomerContainer {
-    private ArrayList<Contractor> contractor;
+import ModelLayer.Customer;
 
-    public CustomerContainer() {
-        contractor = new ArrayList<>();
+/**
+ * Created by RaidenRabit on 23-Nov-16.
+ */
+public abstract class CustomerContainer {
+    private static ArrayList<Customer> customers;
+
+    public static void addCustomer(Customer customer) {
+        customers.add(customer);
     }
+
+    public static Customer getCustomer(int index) {
+        return customers.get(index);
+    }
+
+    public static int getCustomersSize() {
+        return customers.size();
+    }
+
+    public static void removeCustomer(int index) {
+        customers.remove(index);
+    }
+
 }
 

@@ -1,4 +1,3 @@
-package ModelLayer;
 import java.util.ArrayList;
 
 /**
