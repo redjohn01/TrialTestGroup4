@@ -6,16 +6,16 @@ package ModelLayer;
 public class Customer extends Person {
     private String CPR;
 
-    public Customer(String name, String address, String email,String phone,String city, String CPR) {
+    public Customer(String CPR, String name, String address, String email,String phone,String city) {
         super(name,address,email,phone,city);
         this.CPR = CPR;
     }
 
-    public String getCPR() {
+    public String getCpr() {
         return CPR;
     }
 
-    public void setCPR(String CPR) {
+    public void setCpr(String CPR) {
         this.CPR = CPR;
     }
 
