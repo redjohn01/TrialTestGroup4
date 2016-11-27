@@ -16,11 +16,11 @@ public abstract class ContractorContainer {
         return contractors.get(index);
     }
 
-    public static int getCustomersSize() {
+    public static int getContractorsSize() {
         return contractors.size();
     }
 
-    public static void removeCustomer(int index) {
+    public static void removeContractor(int index) {
         contractors.remove(index);
     }
 

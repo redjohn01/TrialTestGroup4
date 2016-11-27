@@ -46,7 +46,7 @@ public class ContractorControl {
                 break;
 
         }
-        return newInfor( EmployeeContainer.getEmployee(index).getCPR() );
+        return newInfor( ContractorContainer.getContractor(index).getCVR() );
     }
 
     private static String newInfor(String name)
@@ -55,18 +55,18 @@ public class ContractorControl {
         return ( "NAME: "+contractor.getName()+"\nCITY: "+contractor.getCity()+"\nADDRESS: "+contractor.getAddress()+"\nCVR: "+contractor.getCVR()+"\nEMAIL: "+contractor.getEmail()+"\nPHONE: "+contractor.getPhone() );
     }
 
-    public static int deleteEmployee(String name) {
+    public static int deleteContractor(String name) {
         if (findContractor(name) >= 0)
         {
-            EmployeeContainer.removeEmployee(findContractor(name));
+           ContractorContainer.removeContractor(findContractor(name));
             return findContractor(name);
         } else
             return findContractor(name);
     }
 
     private static int findContractor(String name) {
-        for (int i = 0; i < EmployeeContainer.getEmployeesSize(); i++)
-            if (EmployeeContainer.getEmployee(i).getName().equals(name))
+        for (int i = 0; i < ContractorContainer.getContractorsSize(); i++)
+            if (ContractorContainer.getContractor(i).getName().equals(name))
                 return i;
         return -1;
     }
