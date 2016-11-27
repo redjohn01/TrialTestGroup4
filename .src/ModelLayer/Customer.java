@@ -11,7 +11,7 @@ public class Customer extends Person {
         this.CPR = CPR;
     }
 
-    public String getCpr() {
+    public String getCPR() {
         return CPR;
     }
 

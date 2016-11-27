@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Created by RedJohn on 23-Nov-16.
  */
 public abstract class EmployeeContainer {
-    public static ArrayList<Employee> employees;
+    public static ArrayList<Employee> employees = new ArrayList<>();
 
 
     public static void addEmployee(Employee employee) {

@@ -1,6 +1,7 @@
 package ControlLayer;
 
 import ModelLayer.Customer;
+import ModelLayer.ContractorContainer;
 import ModelLayer.CustomerContainer;
 
 /**
@@ -33,22 +34,22 @@ public abstract class CustomerControl {
                 CustomerContainer.getCustomer(index).setName(newInfo);
                 break;
             case 3:
-                CustomerContainer.getCustomer(index).setAddress(newInfo);
+               CustomerContainer.getCustomer(index).setAddress(newInfo);
                 break;
             case 4:
-                CustomerContainer.getCustomer(index).setEmail(newInfo);
+                ModelLayer.CustomerContainer.getCustomer(index).setEmail(newInfo);
                 break;
             case 5:
-                CustomerContainer.getCustomer(index).setPhone(newInfo);
+                ModelLayer.CustomerContainer.getCustomer(index).setPhone(newInfo);
                 break;
             case 6:
-                CustomerContainer.getCustomer(index).setCity(newInfo);
+                ModelLayer.CustomerContainer.getCustomer(index).setCity(newInfo);
                 break;
         }
-        return newInfor( CustomerContainer.getCustomer(index).getCpr() );
+        return newInfor( CustomerContainer.getCustomer(index).getCPR() );
     }
 
-    public static String newInfor(String cpr)
+    private static String newInfor(String cpr)
     {
         Customer customer = CustomerContainer.getCustomer(findCustomer(cpr));
         return ( "NAME: "+customer.getName()+"\nCITY: "+customer.getCity()+"\nADDRESS: "+customer.getAddress()+"\nCPR: "+customer.getCPR()+"\nEMAIL: "+customer.getEmail()+"\nPHONE: "+customer.getPhone() );
@@ -57,14 +58,14 @@ public abstract class CustomerControl {
     public static int deleteCustomer(String cpr) { // asumes there is at least 1 customer in the system
         if (findCustomer(cpr) >= 0) // if there is such customer
         {
-            CustomerContainer.removeCustomer(findCustomer(cpr)); // remove him from the container
+            ContractorContainer.removeCustomer(findCustomer(cpr)); // remove him from the container
             return findCustomer(cpr);
         } else
             return findCustomer(cpr);
     }
 
     private static int findCustomer(String cpr) {
-        for (int i = 0; i < CustomerContainer.getCustomersSize(); i++)
+        for (int i = 0; i < ContractorContainer.getCustomersSize(); i++)
             if ( CustomerContainer.getCustomer(i).getCPR().equals(cpr) )
                 return i;
         return -1; // there is no such customer
