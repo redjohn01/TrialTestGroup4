@@ -21,7 +21,7 @@ public abstract class CustomerInputChecker {
         address = verifyAddress();
         email = verifyEmail();
         phone = verifyPhone();
-        city = veryifyCity();
+        city = verifyCity();
 
         CustomerControl.addCustomer(cpr, name, address, email, phone, city); // create customer and add to container
     }
@@ -71,9 +71,10 @@ public abstract class CustomerInputChecker {
     }
 
     public static String verifyEmail() {
-        email = null; // making sure it is empty before starting the process
+
 
         do {
+            email = null; // making sure it is empty before starting the process
             ok = true;
             email = Input.readString();
             if (!(email.toLowerCase().contains("@") && email.toLowerCase().contains(".")) || email.length() < 5) // checks if email is at least 5 characters and contains @ and .
@@ -107,7 +108,7 @@ public abstract class CustomerInputChecker {
         return phone;
     }
 
-    public static String veryifyCity() {
+    public static String verifyCity() {
         city = null; // making sure it is empty before starting the process
 
         do {

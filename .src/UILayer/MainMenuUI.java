@@ -3,6 +3,7 @@ package UILayer;
 import ControlLayer.CustomerControl;
 import UILayer.Input;
 import UILayer.ErrorWriter;
+import UILayer.UpdateMenu;
 
 /**
  * Created by RaidenRabit on 23-Nov-16.
@@ -28,6 +29,7 @@ public class MainMenuUI {
 
     private int customerMenu() {
         int choice;
+        String cpr;
         do {
             choice = Input.readInt();
 
@@ -36,16 +38,25 @@ public class MainMenuUI {
                     CustomerInputChecker.addCustomer();
                     break;
                 case 2:
-                    if( CustomerControl.readCustomer(CustomerInputChecker.verifyCpr()).length() == 1 ) // if the string is composed of only 1 character, it means the methode returned only -1, which means there is no such customer in the system
+                    cpr = CustomerControl.readCustomer(CustomerInputChecker.verifyCpr());
+                    if( cpr.length() <= 2 ) // if the string is composed of only 1 character, it means the methode returned only -1, which means there is no such customer in the system
                         ErrorWriter.print(ErrorCode.NO_SUCH_CUSTOMER);
                     else
-                        System.out.println( CustomerControl.readCustomer(CustomerInputChecker.verifyCpr()) );
+                        System.out.println( cpr );
                     break;
                 case 3:
-
+                    cpr = CustomerControl.readCustomer(CustomerInputChecker.verifyCpr());
+                    if( cpr.length() <= 2 ) // if the string is composed of only 1 character, it means the methode returned only -1, which means there is no such customer in the system
+                        ErrorWriter.print(ErrorCode.NO_SUCH_CUSTOMER);
+                    else
+                    {
+                        System.out.println( cpr ); // print current information of the customer
+                        UpdateMenu.customerInfo( CustomerInputChecker.verifyCpr() );      // go to update menu
+                    }
                     break;
                 case 4:
-                    if ( CustomerControl.deleteCustomer(CustomerInputChecker.verifyCpr() ) < 0) // if there is no such customer display error, else customer is deleted automatically.
+                    cpr = CustomerInputChecker.verifyCpr();
+                    if ( CustomerControl.deleteCustomer( cpr ) < 0) // if there is no such customer display error, else customer is deleted automatically.
                         ErrorWriter.print(ErrorCode.NO_SUCH_CUSTOMER);
                     break;
                 case 5:

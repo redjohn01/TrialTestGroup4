@@ -23,15 +23,29 @@ public abstract class CustomerControl {
             return String.valueOf(findCustomer(cpr));
     }
 
-    public static String updateCustomer(String cpr) { //asumes there is at least 1 customer in the system
-        if( findCustomer(cpr) >= 0 )
+    public static String updateCustomer(int index, int updateType, String newInfo) {
+        switch(updateType)
         {
-            Customer customer = CustomerContainer.getCustomer(findCustomer(cpr));
-            return "";
+            case 1:
+                CustomerContainer.getCustomer(index).setCpr(newInfo);
+                break;
+            case 2:
+                CustomerContainer.getCustomer(index).setName(newInfo);
+                break;
+            case 3:
+                CustomerContainer.getCustomer(index).setAddress(newInfo);
+                break;
+            case 4:
+                CustomerContainer.getCustomer(index).setEmail(newInfo);
+                break;
+            case 5:
+                CustomerContainer.getCustomer(index).setPhone(newInfo);
+                break;
+            case 6:
+                CustomerContainer.getCustomer(index).setCity(newInfo);
+                break;
         }
-        else
-            return String.valueOf( findCustomer(cpr) );
-
+        return newInfor( CustomerContainer.getCustomer(index).getCpr() );
     }
 
     public static String newInfor(String cpr)
