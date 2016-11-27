@@ -4,19 +4,19 @@ package ModelLayer;
  * Created by RedJohn on 23-Nov-16.
  */
 public class Customer extends Person {
-    private String CPR;
+    private String cpr;
 
-    public Customer(String CPR, String name, String address, String email,String phone,String city) {
+    public Customer(String cpr, String name, String address, String email,String phone,String city) {
         super(name,address,email,phone,city);
-        this.CPR = CPR;
+        this.cpr = cpr;
     }
 
     public String getCpr() {
-        return CPR;
+        return cpr;
     }
 
     public void setCpr(String CPR) {
-        this.CPR = CPR;
+        this.cpr = cpr;
     }
 
 }
