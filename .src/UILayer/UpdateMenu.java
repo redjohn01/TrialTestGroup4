@@ -3,12 +3,15 @@ package UILayer;
 import ControlLayer.CustomerControl;
 import UILayer.CustomerInputChecker;
 
+import static UILayer.MenuText.*;
+
 /**
  * Created by EU on 2016-11-27.
  */
 public abstract class UpdateMenu {
 
     public static void customerInfo(String indexS) {
+        MenuText.write(UPDATE_CUSTOMER_MENU);
         int indexI = Integer.parseInt(indexS);
         int choice;
         String updatedInfo = "";

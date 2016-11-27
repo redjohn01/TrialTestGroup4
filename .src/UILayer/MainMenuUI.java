@@ -4,12 +4,15 @@ import ControlLayer.CustomerControl;
 import UILayer.Input;
 import UILayer.ErrorWriter;
 import UILayer.UpdateMenu;
+import static UILayer.MenuText.*;
+
 
 /**
  * Created by RaidenRabit on 23-Nov-16.
  */
 public class MainMenuUI {
     public void runMainLoop() {
+        MenuText.write(MAIN_MENU);
         int choice;
         do {
             choice = Input.readInt();
@@ -28,9 +31,12 @@ public class MainMenuUI {
     }
 
     private int customerMenu() {
+
+
         int choice;
         String cpr;
         do {
+            MenuText.write(CUSTOMER_MENU);
             choice = Input.readInt();
 
             switch (choice) {
