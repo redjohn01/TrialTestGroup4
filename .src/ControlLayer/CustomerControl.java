@@ -58,14 +58,14 @@ public abstract class CustomerControl {
     public static int deleteCustomer(String cpr) { // asumes there is at least 1 customer in the system
         if (findCustomer(cpr) >= 0) // if there is such customer
         {
-            ContractorContainer.removeCustomer(findCustomer(cpr)); // remove him from the container
+            CustomerContainer.removeCustomer(findCustomer(cpr)); // remove him from the container
             return findCustomer(cpr);
         } else
             return findCustomer(cpr);
     }
 
     private static int findCustomer(String cpr) {
-        for (int i = 0; i < ContractorContainer.getCustomersSize(); i++)
+        for (int i = 0 ; i < CustomerContainer.getCustomersSize() ; i++)
             if ( CustomerContainer.getCustomer(i).getCPR().equals(cpr) )
                 return i;
         return -1; // there is no such customer
