@@ -8,13 +8,14 @@ public class Customer extends Person {
 
     public Customer(String CPR, String name, String address, String email,String phone,String city) {
         super(name,address,email,phone,city);
+        this.CPR = CPR;
     }
 
     public String getCPR() {
         return CPR;
     }
 
-    public void setCPR(String CPR) {
+    public void setCpr(String CPR) {
         this.CPR = CPR;
     }
 

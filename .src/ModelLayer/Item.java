@@ -9,12 +9,13 @@ public class Item {
     private double price;
     private int quantity;
 
-    public Item(String type,String barcode,double price, int quantity) {
+    public Item(String type, String barcode, double price, int quantity) {
         this.type = type;
         this.barcode = barcode;
         this.price = price;
         this.quantity = quantity;
     }
+
     public String getType() {
         return type;
     }

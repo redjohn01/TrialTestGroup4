@@ -6,7 +6,7 @@ package ModelLayer;
 public abstract class Person {
     private String name, address, email, city, phone;
 
-    public Person(String name, String address, String email, String city, String phone) {
+    public Person(String name, String address, String email, String phone, String city) {
         this.name = name;
         this.address = address;
         this.email = email;
