@@ -3,7 +3,7 @@ package ModelLayer;
 /**
  * Created by RedJohn on 23-Nov-16.
  */
-public class Order {
+public abstract class Order {
 
     private String numberID;
     private int quantity;
