@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="813b0afb-1f10-438c-bd22-e4128d35d945" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.src/ModelLayer/LoanContainer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.src/ModelLayer/SaleContainer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.src/ModelLayer/Loan.java" afterPath="$PROJECT_DIR$/.src/ModelLayer/Loan.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.src/ModelLayer/Sale.java" afterPath="$PROJECT_DIR$/.src/ModelLayer/Sale.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TrialTestGroup4.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -885,7 +882,7 @@
       <workItem from="1480278194182" duration="58000" />
       <workItem from="1480278639682" duration="106000" />
       <workItem from="1480320826147" duration="909000" />
-      <workItem from="1480322135108" duration="6577000" />
+      <workItem from="1480322135108" duration="6827000" />
     </task>
     <task id="LOCAL-00001" summary="General classes to work at">
       <created>1480067811305</created>
@@ -912,7 +909,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14625000" />
+    <option name="totallyTimeSpent" value="14875000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1064" extended-state="6" />
