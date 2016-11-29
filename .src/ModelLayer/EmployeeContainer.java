@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Created by RedJohn on 23-Nov-16.
  */
-public abstract class EmployeeContainer {
+public class EmployeeContainer {
     private  ArrayList<Employee> employees;
 
     public EmployeeContainer() {
