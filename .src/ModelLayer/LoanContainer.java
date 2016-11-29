@@ -6,9 +6,9 @@ import java.util.ArrayList;
  * Created by Admin on 11/28/2016.
  */
 public class LoanContainer {
-    private ArrayList<Loan> loan;
+    private ArrayList<Loan> loans;
 
     public LoanContainer(){
-        loan = new ArrayList<>();
+        loans = new ArrayList<>();
     }
 }

@@ -1,4 +1,5 @@
 package ModelLayer;
+import java.util.*;
 
 /**
  * Created by RedJohn on 23-Nov-16.
@@ -8,10 +9,10 @@ public abstract class Order {
     private String numberID;
     private int quantity;
     //private Item item TODO
-
+    private ArrayList<Item> items;
     public Order(String numberID, int quantity) {
         this.numberID = numberID;
-        this.quantity = quantity;
+        items = new ArrayList<>();
     }
 
     public String getNumberID() {
