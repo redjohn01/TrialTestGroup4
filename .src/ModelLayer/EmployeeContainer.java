@@ -5,11 +5,19 @@ import java.util.ArrayList;
 /**
  * Created by RedJohn on 23-Nov-16.
  */
-public abstract class EmployeeContainer {
+public class EmployeeContainer {
     private  ArrayList<Employee> employees;
+    private static EmployeeContainer instance;
 
-    public EmployeeContainer() {
+    private EmployeeContainer() {
         employees = new ArrayList<>();
+    }
+
+    public static EmployeeContainer getInstance() {
+        if(instance==null){
+            instance = new EmployeeContainer();
+        }
+        return instance;
     }
 
     public  void addEmployee(Employee employee) {

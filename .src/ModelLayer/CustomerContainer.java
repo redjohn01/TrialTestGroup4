@@ -5,22 +5,34 @@ import java.util.ArrayList;
 /**
  * Created by RaidenRabit on 23-Nov-16.
  */
-public abstract class CustomerContainer {
-    public static ArrayList<Customer> customers = new ArrayList<>();
+public class CustomerContainer {
+    private  ArrayList<Customer> customers;
+    private static CustomerContainer instance;
 
-    public static void addCustomer(Customer customer) {
+    private CustomerContainer() {
+        customers = new ArrayList<>();
+    }
+
+    public static CustomerContainer getInstance() {
+        if(instance==null){
+            instance = new CustomerContainer();
+        }
+        return instance;
+    }
+
+    public  void addCustomer(Customer customer) {
         customers.add(customer);
     }
 
-    public static Customer getCustomer(int index) {
+    public  Customer getCustomer(int index) {
         return customers.get(index);
     }
 
-    public static int getCustomersSize() {
+    public  int getCustomersSize() {
         return customers.size();
     }
 
-    public static void removeCustomer(int index) {
+    public  void removeCustomer(int index) {
         customers.remove(index);
     }
 

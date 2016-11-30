@@ -7,22 +7,33 @@ import java.util.ArrayList;
  */
 public class ItemContainer {
 
-    public static ArrayList<Item> items = new ArrayList<>();
+    private ArrayList<Item> items;
+    private static ItemContainer instance;
 
+    private ItemContainer() {
+        items = new ArrayList<>();
+    }
 
-    public static void addEItem(Item item) {
+    public static ItemContainer getInstance() {
+        if(instance==null){
+            instance = new ItemContainer();
+        }
+        return instance;
+    }
+
+    public  void addEItem(Item item) {
         items.add(item);
     }
 
-    public  static Item getItem(int index) {
+    public   Item getItem(int index) {
         return items.get(index);
     }
 
-    public static int getItemsSize() {
+    public  int getItemsSize() {
         return items.size();
     }
 
-    public static void removeItem(int index) {
+    public  void removeItem(int index) {
         items.remove(index);
     }
 

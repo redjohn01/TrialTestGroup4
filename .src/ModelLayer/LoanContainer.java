@@ -7,8 +7,17 @@ import java.util.ArrayList;
  */
 public class LoanContainer {
     private ArrayList<Loan> loan;
+    private static LoanContainer instance;
 
-    public LoanContainer(){
+    private LoanContainer() {
         loan = new ArrayList<>();
     }
+
+    public static LoanContainer getInstance() {
+        if(instance==null){
+            instance = new LoanContainer();
+        }
+        return instance;
+    }
+
 }

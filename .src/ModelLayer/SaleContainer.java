@@ -7,8 +7,16 @@ import java.util.ArrayList;
  */
 public class SaleContainer {
     private ArrayList<Sale> sale;
+    private static SaleContainer instance;
 
-    public SaleContainer() {
+    private SaleContainer() {
         sale = new ArrayList<>();
+    }
+
+    public static SaleContainer getInstance() {
+        if(instance==null){
+            instance = new SaleContainer();
+        }
+        return instance;
     }
 }
