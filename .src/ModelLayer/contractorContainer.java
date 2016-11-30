@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class ContractorContainer {
     private  ArrayList<Contractor> contractors;
     private static ContractorContainer instance;
+    private int numbers;
 
     private ContractorContainer() {
         contractors = new ArrayList<>();
