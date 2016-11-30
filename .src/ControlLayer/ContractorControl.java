@@ -6,17 +6,17 @@ import ModelLayer.*;
  * Created by RedJohn on 23-Nov-16.
  */
 public class ContractorControl {
-    private ModelLayer.contractorContainer contractorContainer;
+    private ModelLayer.ContractorContainer ContractorContainer;
 
     public  void addContractor(String name, String address, String email, String phone, String city, String CVR) {
 
         Contractor contractor = new Contractor(name, address, email, phone, city, CVR);
-        contractorContainer.addContractor(contractor);
+        ContractorContainer.addContractor(contractor);
     }
 
     public  String readContractor(String name) { //TODO: return string of all the info that will be printed in MainMenuUI
         if( findContractor(name) >= 0 )
-        {   Contractor contractor = contractorContainer.getContractor(findContractor(name));
+        {   Contractor contractor = ContractorContainer.getContractor(findContractor(name));
             return ( "NAME: "+contractor.getName()+"\nCITY: "+contractor.getCity()+"\nADDRESS: "+contractor.getAddress()+"\nCPR: "+contractor.getCVR()+"\nEMAIL: "+contractor.getEmail()+"\nPHONE: "+contractor.getPhone() );
         }
         else
@@ -28,47 +28,47 @@ public class ContractorControl {
         switch(updateType)
         {
             case 1:
-                contractorContainer.getContractor(index).setCVR(newInfo);
+                ContractorContainer.getContractor(index).setCVR(newInfo);
                 break;
 
             case 2:
-                contractorContainer.getContractor(index).setName(newInfo);
+                ContractorContainer.getContractor(index).setName(newInfo);
                 break;
             case 3:
-                contractorContainer.getContractor(index).setAddress(newInfo);
+                ContractorContainer.getContractor(index).setAddress(newInfo);
                 break;
             case 4:
-                contractorContainer.getContractor(index).setEmail(newInfo);
+                ContractorContainer.getContractor(index).setEmail(newInfo);
                 break;
             case 5:
-                contractorContainer.getContractor(index).setPhone(newInfo);
+                ContractorContainer.getContractor(index).setPhone(newInfo);
                 break;
             case 6:
-                contractorContainer.getContractor(index).setCity(newInfo);
+                ContractorContainer.getContractor(index).setCity(newInfo);
                 break;
 
         }
-        return newInfor( contractorContainer.getContractor(index).getCVR() );
+        return newInfor( ContractorContainer.getContractor(index).getCVR() );
     }
 
     private  String newInfor(String name)
     {
-        Contractor contractor = contractorContainer.getContractor(findContractor(name));
+        Contractor contractor = ContractorContainer.getContractor(findContractor(name));
         return ( "NAME: "+contractor.getName()+"\nCITY: "+contractor.getCity()+"\nADDRESS: "+contractor.getAddress()+"\nCVR: "+contractor.getCVR()+"\nEMAIL: "+contractor.getEmail()+"\nPHONE: "+contractor.getPhone() );
     }
 
     public  int deleteContractor(String name) {
         if (findContractor(name) >= 0)
         {
-           contractorContainer.removeContractor(findContractor(name));
+            ContractorContainer.removeContractor(findContractor(name));
             return findContractor(name);
         } else
             return findContractor(name);
     }
 
     private  int findContractor(String name) {
-        for (int i = 0; i < contractorContainer.getContractorsSize(); i++)
-            if (contractorContainer.getContractor(i).getName().equals(name))
+        for (int i = 0; i < ContractorContainer.getContractorsSize(); i++)
+            if (ContractorContainer.getContractor(i).getName().equals(name))
                 return i;
         return -1;
     }
