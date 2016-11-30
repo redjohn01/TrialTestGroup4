@@ -88,7 +88,7 @@ public abstract class CustomerInputChecker {
     }
 
     public static String verifyPhone() {
-        email = null; // making sure it is empty before starting the process
+        phone = null; // making sure it is empty before starting the process
 
         do {
             ok = true;
