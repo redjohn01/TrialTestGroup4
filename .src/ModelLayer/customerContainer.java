@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Created by RaidenRabit on 23-Nov-16.
  */
-public abstract class CustomerContainer {
+public abstract class customerContainer {
     public static ArrayList<Customer> customers = new ArrayList<>();
 
     public static void addCustomer(Customer customer) {

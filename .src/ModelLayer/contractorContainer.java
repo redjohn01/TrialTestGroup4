@@ -5,10 +5,10 @@ import java.util.ArrayList;
 /**
  * Created by RedJohn on 23-Nov-16.
  */
-public abstract class ContractorContainer {
+public abstract class contractorContainer {
     private  ArrayList<Contractor> contractors;
 
-    public ContractorContainer() {
+    public contractorContainer() {
         contractors = new ArrayList<>();
      }
 
